@@ -1,52 +1,39 @@
-import Link from "next/link";
+import Image from "next/image";
 
-import ImageSlideshow from "@/components/image-slide-show";
+import mealIcon from "@/assets/icons/meal.png";
+import communityIcon from "@/assets/icons/community.png";
+import eventsIcon from "@/assets/icons/events.png";
 import classes from "./page.module.css";
 
-export default function Home() {
+export default function CommunityPage() {
   return (
     <>
       <header className={classes.header}>
-        <div className={classes.slideshow}>
-          <ImageSlideshow />
-        </div>
-        <div>
-          <div className={classes.hero}>
-            <h1>NextLevel Food for NextLevel Foodies</h1>
-            <p>Taste & share food from all over the world.</p>
-          </div>
-          <div className={classes.cta}>
-            <Link href="/community">Join the Community</Link>
-            <Link href="/meals">Explore Meals</Link>
-          </div>
-        </div>
+        <h1>
+          One shared passion: <span className={classes.highlight}>Food</span>
+        </h1>
+        <p>Join our community and share your favorite recipes!</p>
       </header>
-      <main>
-        <section className={classes.section}>
-          <h2>How it works</h2>
-          <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
-          </p>
-          <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
-          </p>
-        </section>
+      <main className={classes.main}>
+        <h2>Community Perks</h2>
 
-        <section className={classes.section}>
-          <h2>Why NextLevel Food?</h2>
-          <p>
-            NextLevel Food is a platform for foodies to share their favorite
-            recipes with the world. It&apos;s a place to discover new dishes,
-            and to connect with other food lovers.
-          </p>
-          <p>
-            NextLevel Food is a place to discover new dishes, and to connect
-            with other food lovers.
-          </p>
-        </section>
+        <ul className={classes.perks}>
+          <li>
+            <Image src={mealIcon} alt="A delicious meal" />
+            <p>Share & discover recipes</p>
+          </li>
+          <li>
+            <Image src={communityIcon} alt="A crowd of people, cooking" />
+            <p>Find new friends & like-minded people</p>
+          </li>
+          <li>
+            <Image
+              src={eventsIcon}
+              alt="A crowd of people at a cooking event"
+            />
+            <p>Participate in exclusive events</p>
+          </li>
+        </ul>
       </main>
     </>
   );
