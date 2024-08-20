@@ -5,6 +5,7 @@ import MealsGrid from "@/components/meals/meals-grid";
 import { getMeals } from "@/lib/meals";
 import { Suspense } from "react";
 import Loading from "./loading-out";
+
 const Meals = async () => {
   const meals = await getMeals();
   return <MealsGrid meals={meals} />;
